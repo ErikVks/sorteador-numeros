@@ -44,6 +44,10 @@ function sortear(){
     for (let i = 0; i < quantidade; i++){
         let numero = lista[parseInt(Math.random() * (lista.length - 1))];
         alert(numero);
+        while (sorteados.includes(numero)){
+            numero = lista[parseInt(Math.random() * (lista.length - 1))];
+            alert(numero);
+        }
         sorteados.push(numero);
     }
     alert(sorteados);
