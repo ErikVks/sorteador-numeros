@@ -49,5 +49,25 @@ function sortear(){
         }
         sorteados.push(numero);
     }
-    exibicaoDeTexto('resultado',`Lista dos números sorteados: ${sorteados}`)
+    exibicaoDeTexto('resultado',`Números sorteados: ${sorteados}`)
+    alterarStatusBotao();
+}
+
+function alterarStatusBotao(){
+    let botao = document.getElementById('btn-reiniciar');
+    if (botao.classList.contains('container__botao-desabilitado')){
+        botao.classList.remove('container__botao-desabilitado');
+        botao.classList.add('container__botao');
+    } else{
+        botao.classList.remove('container__botao');
+        botao.classList.add('container__botao-desabilitado');
+    }
+}
+
+function reiniciar(){
+    document.getElementById('quantidade').value = '';
+    document.getElementById('de').value = '';
+    document.getElementById('ate').value = '';
+    exibicaoDeTexto('resultado','Números sorteados:  nenhum até agora');
+    alterarStatusBotao();
 }
